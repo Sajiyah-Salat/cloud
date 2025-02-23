@@ -55,7 +55,7 @@ export default function Home() {
 
 
       {/* Vision & Mission */}
-      <section className="py-16 px-10 flex justify-center mx-auto gap-8 text-center">
+      <section className="py-16 px-10 flex md:flex-row flex-col justify-center mx-auto gap-8 text-center">
       <Image src="/vissiontittle.png" alt="Logo" width={500} height={500} />
 
         <p className=" max-w-3xl text-xl text-center mt-10">
@@ -68,10 +68,10 @@ export default function Home() {
   style={{ backgroundImage: "url('/vision.png')" }}
 >
   <div className="max-w-4xl mx-auto text-black p-8 rounded-lg">
-    <div className="grid grid-cols-1 mt-20 md:grid-cols-2 gap-20">
+    <div className="flex mt-20  gap-20">
       <div className='p-10'>
         <h2 className="text-sm md:text-2xl font-bold ">VISION</h2>
-        <p className="mt-2 text-lg">
+        <p className="mt-2 text-xsmd:text-lg">
           To create a vibrant and thriving ecosystem where influence translates into tangible rewards and opportunities.
         </p>
       </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
 
    {/* Problem & Solution */}
-<section className="bg-sky-500 py-16 px-8 flex flex-col lg:flex-row items-center justify-center ">
+<section className="bg-sky-500 py-16 px-8 flex lg:flex-row flex-col items-center justify-center ">
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     
     {/* Problem Section */}
@@ -143,9 +143,10 @@ export default function Home() {
 
 
 {/* Tokenomics Overview */}
-<h2 className="text-center text-white text-6xl font-bold mb-4 mt-10">TOKENOMICS br OVERVIEW</h2>
+<Image src="/toke.png" alt="presale
+" width={700} height={700} className="mx-auto mt-4" />
 <section className="flex flex-col lg:flex-row items-center justify-center py-16 px-8 gap-8">
-<div className="py-16 px-8 bg-cover bg-center h-[500px] w-[600px] contain" style={{ backgroundImage: "url('/overview.png')" }}>
+<div className="py-16 px-8 bg-cover bg-center p-20 h-[500px] w-[600px] bg-no-repeat" style={{ backgroundImage: "url('/overview.png')" , backgroundSize : 'contain' }}>
   <div className="max-w-2xl mx-auto  p-6 rounded-lg shadow-lg ">
     <h2 className="text-center text-white text-2xl font-bold mb-4">TOKENOMICS OVERVIEW</h2>
     
@@ -187,11 +188,12 @@ export default function Home() {
 
 
 {/* Leaderboard */}
-<h2 className="text-center text-white text-6xl font-bold mb-4">PRESALE <br/> LEADERBOARD</h2>
+<Image src="/presale.png" alt="presale
+" width={700} height={700} className="mx-auto mt-4" />
 <section className="flex justify-center items-center py-16 px-8">
   <div 
-    className="w-[900px] p-20 rounded-lg  bg-cover contain bg-center"
-    style={{ backgroundImage: "url('/overview.png')" }} // Placeholder for BG
+    className="w-[900px] p-40 rounded-lg  bg-cover  bg-center , bg-no-repeat"
+    style={{ backgroundImage: "url('/overview.png')"  }} // Placeholder for BG
   >
 
 
@@ -248,7 +250,7 @@ export default function Home() {
         {/* Main container with blue background */}
         <div className=" p-8 rounded-lg relative">
           {/* Black textured banner with text */}
-          <div   style={{ backgroundImage: "url('/join.png')" }} className=" bg-no-repeat bg-center h-96 rounded-lg p-4 mb-8 relative">
+          <div   style={{ backgroundImage: "url('/join.png') "  , backgroundSize : 'contain'}} className=" bg-no-repeat  bg-center h-96 rounded-lg p-4 mb-8 relative">
             <div className="  rounded-lg p-3">
               {/* Title with orange text shadow */}
               <h2 className="mt-52 text-orange-500 text-center text-2xl font-bold 
@@ -266,11 +268,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bottom yellow banner with buttons */}
-          <div 
-  style={{ backgroundImage: "url('/footer.png')" }}  
-  className=" bottom-0 left-0  bg-no-repeat bg-cover h-32 rounded-full p-3 flex items-center justify-between"
+<div className='w-full'>
+            {/* Bottom yellow banner with buttons */}
+            <div 
+  style={{ backgroundImage: "url('/footer.png')",  backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}  
+  className="bottom-0 left-0 h-32 w-full rounded-full p-3 flex items-center justify-between"
 >
+
             {/* Social icons */}
             <div className="flex gap-2 pl-4">
               <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
@@ -294,14 +298,9 @@ export default function Home() {
               Join Now
             </button>
           </div>
+</div>
 
-          {/* Water splash effect */}
-          <div className="absolute bottom-14 left-1/2 -translate-x-1/2">
-            <div className="relative w-8 h-8">
-              <span className="absolute inset-0 animate-ping">💧</span>
-              <span className="absolute inset-0">💧</span>
-            </div>
-          </div>
+  
         </div>
       </div>
     </div>

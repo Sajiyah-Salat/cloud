@@ -116,8 +116,8 @@ export default function Home() {
     <div className="flex items-center gap-4">
       {/* Solution Box */}
       <div 
-        className="p-8 rounded-lg shadow-lg h-[400px] contain  bg-cover bg-center w-full"
-        style={{ backgroundImage: "url('/solution.png')" }}
+        className=" p-10 rounded-lg shadow-lg h-[400px] bg-no-repeat   bg-center w-full"
+        style={{ backgroundImage: "url('/solution.png')"    }}
       >
         <h2 className="text-2xl font-bold text-black">THE SOLUTION</h2>
         <p className="mt-4 text-xs text-black">
@@ -253,52 +253,61 @@ export default function Home() {
           <div   style={{ backgroundImage: "url('/join.png') "  , backgroundSize : 'contain'}} className=" bg-no-repeat  bg-center h-96 rounded-lg p-4 mb-8 relative">
             <div className="  rounded-lg p-3">
               {/* Title with orange text shadow */}
-              <h2 className="mt-52 text-orange-500 text-center text-2xl font-bold 
+              <h2 className="mt-44 text-white text-center text-xl font-bold 
               [text-shadow:2px_2px_0px_#000,2px_-2px_0px_#000,-2px_2px_0px_#000,-2px_-2px_0px_#000]">
                 JOIN THe $CLOUT Community
               </h2>
 
-              {/* Telegram join text */}
-              <div className="flex items-center   justify-center gap-2 mt-2">
-                <div className="w-6 h-6  rounded-full flex items-center justify-center">
-                  <span className="transform -rotate-45">✋</span>
-                </div>
-                <p className="text-white text-sm">Join Telegram</p>
-              </div>
-            </div>
-          </div>
-
-<div className='w-full'>
-            {/* Bottom yellow banner with buttons */}
-            <div 
-  style={{ backgroundImage: "url('/footer.png')",  backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}  
-  className="bottom-0 left-0 h-32 w-full rounded-full p-3 flex items-center justify-between"
->
-
-            {/* Social icons */}
-            <div className="flex gap-2 pl-4">
-              <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <Twitter className="w-5 h-5 text-black" />
-              </button>
-              <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <Send className="w-5 h-5 text-black" />
-              </button>
-              <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <MessageCircle className="w-5 h-5 text-black" />
-              </button>
-              <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <Globe className="w-5 h-5 text-black" />
-              </button>
-
-            </div>
-
-            {/* Join Now button */}
-            <button className="bg-white mr-10 px-4 py-1 rounded-full hover:bg-gray-100 
-            transition-colors text-lg font-medium text-black">
-              Join Now
-            </button>
-          </div>
+{/* Wrapper to center the element */}
+<div className="flex justify-center mt-2">
+  {/* Telegram join text */}
+  <div className="flex items-center bg-yellow-300 p-5 justify-center gap-2 px-3 py-1 rounded-full w-fit">
+    <div className="w-6 h-6 rounded-full flex items-center justify-center">
+      <span className="transform -rotate-45">✋</span>
+    </div>
+    <p className="text-black text-xl font-medium">Join Telegram</p>
+  </div>
 </div>
+
+
+            </div>
+          </div>
+
+<div className="w-full relative">
+  {/* Background Image */}
+  <img 
+    src="/footer.png" 
+    alt="Footer Background" 
+    className="absolute inset-0 w-full h-32 object-cover rounded-full"
+  />
+
+  {/* Content on top of the image */}
+  <div className="relative bottom-0 left-0 h-32 w-full p-3 flex items-center justify-between">
+    
+    {/* Social icons */}
+    <div className="flex gap-2 pl-4">
+      <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+        <Twitter className="w-5 h-5 text-black" />
+      </button>
+      <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+        <Send className="w-5 h-5 text-black" />
+      </button>
+      <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+        <MessageCircle className="w-5 h-5 text-black" />
+      </button>
+      <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+        <Globe className="w-5 h-5 text-black" />
+      </button>
+    </div>
+
+    {/* Join Now button */}
+    <button className="bg-white mr-10 px-4 py-1 rounded-full hover:bg-gray-100 transition-colors text-lg font-medium text-black">
+      Join Now
+    </button>
+
+  </div>
+</div>
+
 
   
         </div>

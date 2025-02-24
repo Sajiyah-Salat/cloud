@@ -54,6 +54,56 @@ export default function Home() {
 </section>
 
 
+{/* Leaderboard */}
+<Image src="/presale.png" alt="presale
+" width={700} height={700} className="mx-auto mt-4" />
+<section className="flex justify-center items-center py-16 px-8">
+  <div 
+    className="w-[900px] p-40 rounded-lg  bg-cover  bg-center , bg-no-repeat"
+    style={{ backgroundImage: "url('/overview.png')"  }} // Placeholder for BG
+  >
+
+
+    <table className="w-full text-white border-collapse">
+      <thead>
+        <tr>
+          <th className="bg-yellow-500 text-black p-3 text-left">Ranking</th>
+          <th className="bg-red-500 text-black p-3 text-left">Address</th>
+          <th className="bg-orange-500 text-black p-3 text-left">Purchased</th>
+        </tr>
+      </thead>
+      <tbody>
+        {leaderboardData.map((item, index) => (
+          <tr key={index} className="border-b border-gray-600">
+            <td className="p-3">
+              <Image 
+                src="/badge1.png" // Placeholder for ranking badge
+                alt="Ranking Badge" 
+                width={24} 
+                height={24} 
+                className="inline-block"
+              />
+            </td>
+            <td className="p-3">{item.address}</td>
+            <td className="p-3">{item.purchased}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    {/* Pagination & Connect Wallet Message */}
+    <div className="flex justify-between items-center mt-4 text-gray-400 text-sm">
+      <p>Connect wallet to see your position</p>
+      <div className="flex gap-2">
+        <button className="px-2 py-1 bg-gray-700 rounded">1</button>
+        <button className="px-2 py-1 bg-gray-700 rounded">2</button>
+        <span>...</span>
+        <button className="px-2 py-1 bg-gray-700 rounded">25</button>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* Vision & Mission */}
       <section className="py-16 px-10 flex md:flex-row flex-col justify-center mx-auto gap-8 text-center">
       <Image src="/vissiontittle.png" alt="Logo" width={500} height={500} />
@@ -187,55 +237,7 @@ export default function Home() {
 </section>
 
 
-{/* Leaderboard */}
-<Image src="/presale.png" alt="presale
-" width={700} height={700} className="mx-auto mt-4" />
-<section className="flex justify-center items-center py-16 px-8">
-  <div 
-    className="w-[900px] p-40 rounded-lg  bg-cover  bg-center , bg-no-repeat"
-    style={{ backgroundImage: "url('/overview.png')"  }} // Placeholder for BG
-  >
 
-
-    <table className="w-full text-white border-collapse">
-      <thead>
-        <tr>
-          <th className="bg-yellow-500 text-black p-3 text-left">Ranking</th>
-          <th className="bg-red-500 text-black p-3 text-left">Address</th>
-          <th className="bg-orange-500 text-black p-3 text-left">Purchased</th>
-        </tr>
-      </thead>
-      <tbody>
-        {leaderboardData.map((item, index) => (
-          <tr key={index} className="border-b border-gray-600">
-            <td className="p-3">
-              <Image 
-                src="/badge1.png" // Placeholder for ranking badge
-                alt="Ranking Badge" 
-                width={24} 
-                height={24} 
-                className="inline-block"
-              />
-            </td>
-            <td className="p-3">{item.address}</td>
-            <td className="p-3">{item.purchased}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-
-    {/* Pagination & Connect Wallet Message */}
-    <div className="flex justify-between items-center mt-4 text-gray-400 text-sm">
-      <p>Connect wallet to see your position</p>
-      <div className="flex gap-2">
-        <button className="px-2 py-1 bg-gray-700 rounded">1</button>
-        <button className="px-2 py-1 bg-gray-700 rounded">2</button>
-        <span>...</span>
-        <button className="px-2 py-1 bg-gray-700 rounded">25</button>
-      </div>
-    </div>
-  </div>
-</section>
 
 {/* Roadmap */}
 <section className="text-center py-16 flex flex-col items-center">

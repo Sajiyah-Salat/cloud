@@ -1,5 +1,9 @@
+"use client"
+
 import Image from 'next/image';
 import { Twitter, Send, Globe, MessageCircle } from "lucide-react";
+import { useRef } from "react";
+
 
 export default function Home() {
   const leaderboardData = [
@@ -10,6 +14,12 @@ export default function Home() {
     { address: "(E)xj. GKJSP", purchased: "1,589,469" },
     { address: "(E)xj. GKJSP", purchased: "1,589,469" },
   ];
+
+  const homeRef = useRef(null);
+const visionRef = useRef(null);
+const tokenomicsRef = useRef(null);
+const roadmapRef = useRef(null);
+
 
   return (
     <div className="bg-[#4FB6E6] text-white font-sans min-h-screen flex flex-col">
@@ -22,12 +32,11 @@ export default function Home() {
 
         {/* Navigation Links */}
         <ul className="flex space-x-6 text-lg ml-6">
-          <li className="cursor-pointer border-b-2 border-white  hover:text-gray-200">Home</li>
-          <li className="cursor-pointer hover:text-gray-200">Vision & Mission</li>
-          <li className="cursor-pointer hover:text-gray-200">WhitePaper</li>
-          <li className="cursor-pointer hover:text-gray-200">Tokenomics</li>
-          <li className="cursor-pointer hover:text-gray-200">Roadmap</li>
-        </ul>
+    <li className="cursor-pointer border-b-2 border-white hover:text-gray-200" onClick={() => homeRef.current.scrollIntoView({ behavior: "smooth" })}>Home</li>
+    <li className="cursor-pointer hover:text-gray-200" onClick={() => visionRef.current.scrollIntoView({ behavior: "smooth" })}>Vision & Mission</li>
+    <li className="cursor-pointer hover:text-gray-200" onClick={() => tokenomicsRef.current.scrollIntoView({ behavior: "smooth" })}>Tokenomics</li>
+    <li className="cursor-pointer hover:text-gray-200" onClick={() => roadmapRef.current.scrollIntoView({ behavior: "smooth" })}>Roadmap</li>
+  </ul>
       </nav>
 
 
@@ -35,7 +44,7 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      <section className="text-center py-16">
+      <section ref={homeRef} className="text-center py-16">
   <Image 
     src="/tittle.png" 
     alt="Logo" 
@@ -105,7 +114,7 @@ export default function Home() {
 </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 px-10 flex md:flex-row flex-col justify-center mx-auto gap-8 text-center">
+      <section ref={visionRef} className="py-16 px-10 flex md:flex-row flex-col justify-center mx-auto gap-8 text-center">
       <Image src="/vissiontittle.png" alt="Logo" width={500} height={500} />
 
         <p className=" max-w-3xl text-xl text-center mt-10">
@@ -193,7 +202,7 @@ export default function Home() {
 
 
 {/* Tokenomics Overview */}
-<Image src="/toke.png" alt="presale
+<Image ref={tokenomicsRef} src="/toke.png" alt="presale
 " width={700} height={700} className="mx-auto mt-4" />
 <section className="flex flex-col lg:flex-row items-center justify-center py-16 px-8 gap-8">
 <div className="py-16 px-8 bg-cover bg-center p-20 h-[500px] w-[600px] bg-no-repeat" style={{ backgroundImage: "url('/overview.png')" , backgroundSize : 'contain' }}>
@@ -240,7 +249,7 @@ export default function Home() {
 
 
 {/* Roadmap */}
-<section className="text-center py-16 flex flex-col items-center">
+<section ref={roadmapRef} className="text-center py-16 flex flex-col items-center">
   <Image src="/tittleRoad.png" alt="Roadmap Title" width={900} height={900} className="mx-auto" />
   <Image src="/roadmap.png" alt="Roadmap" width={900} height={900} className="mx-auto mt-4" />
 </section>
@@ -275,19 +284,18 @@ export default function Home() {
             </div>
           </div>
 
-<div className="w-full relative">
+          <div className=" w-full mb-10 bg-[#4FB6E6] ">
   {/* Background Image */}
   <img 
     src="/footer.png" 
     alt="Footer Background" 
-    className="absolute inset-0 w-full h-32 object-cover rounded-full"
+    className="absolute w-full object-cover rounded-full"
   />
 
-  {/* Content on top of the image */}
-  <div className="relative bottom-0 left-0 h-32 w-full p-3 flex items-center justify-between">
-    
-    {/* Social icons */}
-    <div className="flex gap-2 pl-4">
+  {/* Footer Content */}
+  <div className="relative flex items-center justify-between px-4 py-4">
+    {/* Social Buttons */}
+    <div className="flex gap-2 mt-10">
       <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
         <Twitter className="w-5 h-5 text-black" />
       </button>
@@ -302,13 +310,17 @@ export default function Home() {
       </button>
     </div>
 
-    {/* Join Now button */}
-    <button className="bg-white mr-10 px-4 py-1 rounded-full hover:bg-gray-100 transition-colors text-lg font-medium text-black">
+    {/* Join Button */}
+  <div className='mt-10'>
+  <button className="bg-white px-6 py-2 rounded-full hover:bg-gray-100 transition-colors text-lg font-medium text-black mr-4">
       Join Now
     </button>
-
+  </div>
   </div>
 </div>
+
+
+
 
 
   
